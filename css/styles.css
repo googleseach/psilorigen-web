@@ -1,0 +1,99 @@
+﻿:root {
+    --fondo-principal: #F5EDDC;
+    --fondo-contenedor: #F5EDDC;
+    --texto-principal: #3A2E24;
+    --verde-profundo: #142A1C;
+    --verde-oliva: #2B3E2D;
+    --dorado: #B08D57;
+    --blanco: #FFFFFF;
+    --input-bg: #F5EDDC;
+    --input-focus: #FFFFFF;
+}
+body {
+    background-color: var(--fondo-principal);
+    background-image: linear-gradient(rgba(15, 26, 18, 0.94), rgba(15, 26, 18, 0.94)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Georgia', serif;
+    color: var(--texto-principal);
+    margin: 0;
+    padding: 20px;
+}
+.contenedor { max-width: 800px; margin: 0 auto; background-color: var(--fondo-contenedor); border: 2px solid var(--verde-oliva); border-radius: 15px; padding: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+.cabecera { text-align: center; border-bottom: 2px solid var(--dorado); padding-bottom: 25px; margin-bottom: 30px; }
+.logo-imagen { max-width: 220px; width: 100%; height: auto; display: block; margin: 0 auto 15px auto; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1)); }
+.subtitulo { font-size: 12px; letter-spacing: 5px; color: var(--verde-profundo); margin-top: 5px; text-transform: uppercase; }
+.nav-container { position: relative; margin-bottom: 30px; text-align: center; }
+.menu-toggle { display: none; background-color: var(--verde-profundo); color: var(--fondo-principal); border: none; border-radius: 12px; padding: 14px 20px; cursor: pointer; position: relative; z-index: 10; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+.menu-toggle span { display: block; width: 22px; height: 2px; background-color: var(--fondo-principal); margin: 4px auto; transition: all 0.3s ease; }
+.menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.nav a { background-color: var(--verde-profundo); color: var(--fondo-principal); padding: 12px 25px; text-decoration: none; border-radius: 30px; font-size: 14px; letter-spacing: 2px; transition: all 0.3s; }
+.nav a:hover { background-color: var(--dorado); }
+.nav a.activo { background-color: var(--dorado); box-shadow: 0 4px 8px rgba(176, 141, 87, 0.4); }
+h1 { color: var(--verde-profundo); font-size: 34px; letter-spacing: 2px; text-align: center; margin: 20px 0 10px; }
+h2 { color: var(--verde-profundo); border-bottom: 1px solid var(--dorado); padding-bottom: 10px; margin-top: 40px; }
+p { line-height: 1.8; font-size: 17px; color: var(--texto-principal); }
+.intro { text-align: center; font-style: italic; margin-bottom: 30px; font-size: 18px; }
+.bienvenida { background-color: var(--input-bg); border-left: 4px solid var(--dorado); padding: 25px; margin: 30px 0; font-style: italic; text-align: center; }
+.tarjetas-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 30px; }
+.tarjeta-cta { flex: 1 1 calc(50% - 12px); max-width: 280px; background-color: var(--verde-profundo); color: var(--fondo-principal); border-radius: 50px; padding: 12px 15px; text-align: center; text-decoration: none; transition: all 0.3s; box-shadow: 0 3px 6px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; letter-spacing: 1px; line-height: 1.4; font-weight: bold; }
+.tarjeta-cta:hover { background-color: var(--dorado); transform: translateY(-2px); }
+.tarjeta-cta span { font-size: 20px; }
+.tarjeta-cta p { margin: 0; color: var(--fondo-principal) !important; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+
+/* ESTILOS PARA EL BOTÓN DE WHATSAPP EN INDEX */
+.chat-wa-box { background-color: var(--input-bg); border: 2px solid var(--dorado); border-radius: 15px; padding: 25px; margin-top: 50px; text-align: center; }
+.chat-wa-box h3 { color: var(--verde-profundo); margin-top: 0; font-size: 22px; }
+.chat-wa-box p { font-size: 15px; margin-bottom: 20px; }
+.btn-whatsapp-grande { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #25D366; color: white !important; text-decoration: none; padding: 15px 30px; border-radius: 30px; font-size: 16px; font-weight: bold; letter-spacing: 1px; width: 100%; max-width: 350px; box-sizing: border-box; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.15); }
+.btn-whatsapp-grande:hover { background-color: #128C7E; transform: translateY(-2px); }
+
+input[type="text"], input[type="email"], input[type="tel"], textarea, select, input[type="date"] { width: 100%; padding: 12px; border: 1px solid var(--dorado); border-radius: 5px; background-color: var(--input-focus); font-family: 'Georgia', serif; font-size: 16px; box-sizing: border-box; margin-bottom: 10px; color: var(--texto-principal); }
+.boton-general { background-color: var(--verde-profundo); color: var(--fondo-principal); border: none; padding: 15px 30px; border-radius: 30px; font-size: 16px; letter-spacing: 2px; width: 100%; cursor: pointer; transition: all 0.3s; }
+.boton-general:hover { background-color: var(--dorado); }
+
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    .contenedor { padding: 20px; border: none; border-radius: 10px; }
+    .logo-imagen { max-width: 180px; }
+    p { font-size: 15px; }
+    h1 { font-size: 26px; }
+    .menu-toggle { display: block; }
+    .nav { display: none; flex-direction: column; margin-top: 10px; gap: 5px; }
+    .nav.open { display: flex; }
+    .nav a { width: 100%; padding: 15px 0; box-sizing: border-box; font-size: 16px; border-radius: 8px; }
+    .tarjetas-cta { flex-direction: column; }
+    .tarjeta-cta { max-width: 100%; flex: 1 1 100%; }
+}
+
+/* =========================================
+   ESTILOS PARA FORMULARIO PASO A PASO (WIZARD)
+   ========================================= */
+.wizard-container { position: relative; overflow: hidden; min-height: 400px; margin-top: 20px;}
+.wizard-progress-container { width: 100%; height: 6px; background-color: #e0d8c8; border-radius: 3px; margin-bottom: 30px; overflow: hidden; }
+.wizard-progress-bar { height: 100%; background-color: var(--dorado); width: 0%; transition: width 0.4s ease; }
+.wizard-step { display: none; animation: fadeInSlide 0.4s ease forwards; }
+.wizard-step.active { display: block; }
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.wizard-buttons { display: flex; justify-content: space-between; margin-top: 30px; gap: 10px; }
+.btn-wizard { background-color: var(--verde-profundo); color: var(--fondo-principal); border: none; padding: 12px 25px; border-radius: 30px; font-size: 16px; cursor: pointer; transition: all 0.3s; font-family: 'Georgia', serif; display: flex; align-items: center; gap: 8px; }
+.btn-wizard:hover:not(:disabled) { background-color: var(--dorado); }
+.btn-wizard:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-wizard-prev { background-color: transparent; color: var(--verde-profundo); border: 1px solid var(--verde-profundo); }
+.btn-wizard-prev:hover { background-color: var(--verde-profundo); color: var(--fondo-principal); }
+.wizard-step h3 { color: var(--verde-profundo); font-size: 20px; margin-top: 0; line-height: 1.4; text-align: center;}
+.wizard-step p.subtext { text-align: center; font-size: 15px; color: #666; margin-bottom: 25px; font-style: italic; }
+.opciones-wizard { display: flex; flex-direction: column; gap: 12px; max-width: 500px; margin: 0 auto; }
+.opcion-card { display: block; background-color: var(--input-focus); border: 2px solid #dcd3c1; border-radius: 12px; padding: 15px 20px; cursor: pointer; transition: all 0.2s; font-size: 16px; text-align: center; color: var(--texto-principal); }
+.opcion-card:hover { border-color: var(--dorado); background-color: #fdfbf7; }
+.opcion-card input[type="checkbox"], .opcion-card input[type="radio"] { display: none; }
+.opcion-card.selected { border-color: var(--dorado); background-color: var(--input-bg); box-shadow: 0 4px 10px rgba(176, 141, 87, 0.2); font-weight: bold; }
+.opcion-card.selected::before { content: '✓ '; color: var(--dorado); font-weight: bold; }
+.wizard-input { width: 100%; max-width: 500px; margin: 0 auto; display: block; padding: 15px; border: 2px solid #dcd3c1; border-radius: 10px; font-size: 16px; font-family: 'Georgia', serif; background-color: var(--input-focus); color: var(--texto-principal); resize: vertical; min-height: 100px; }
+.wizard-input:focus { border-color: var(--dorado); outline: none; }

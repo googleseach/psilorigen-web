@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de intención PsilOrigen.">
+    <title>Formulario de Intención | PsilOrigen</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="contenedor">
+    <form action="https://formspree.io/f/xaeyjqkp" method="POST">
+        <div class="cabecera">
+            <h1>PSILORIGEN</h1>
+            <div class="subtitulo">EXPLORA. CONECTA. INTEGRA.</div>
+        </div>
+
+        <div class="intro">
+            <h2>FORMULARIO DE INTENCIÓN E INTROSPECCIÓN</h2>
+            <p><b>Meditación Acompañada</b></p>
+            <p>Un espacio para escucharte antes de comenzar.<br>No necesitas tener una respuesta perfecta.<br>Responde desde la honestidad.</p>
+        </div>
+
+        <h2>Agenda tu experiencia</h2>
+        <label for="fechaAlt">Fecha deseada para la meditación *</label>
+        <input type="date" id="fechaAlt" name="fecha_meditacion" required>
+
+        <label for="horarioAlt">Horario preferido *</label>
+        <select id="horarioAlt" name="horario_meditacion" required>
+            <option value="">Selecciona una opción</option>
+            <option value="Manana">Mañana</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Noche">Noche</option>
+        </select>
+
+        <h2>1. ¿Por qué estás aquí?</h2>
+        <label for="motivacionAlt">¿Qué te motivó a participar en esta meditación?</label>
+        <textarea id="motivacionAlt" name="motivacion" required></textarea>
+
+        <h2>4. Tu intención</h2>
+        <label for="intencionAlt">Completa esta frase: “Mi intención para esta meditación es…”</label>
+        <textarea id="intencionAlt" name="intencion_final"></textarea>
+
+        <h2>Datos de contacto</h2>
+        <label for="nombreAlt">Nombre: *</label>
+        <input type="text" id="nombreAlt" name="nombre" required>
+
+        <label for="emailAlt">Correo electrónico: *</label>
+        <input type="email" id="emailAlt" name="email" required>
+
+        <div class="cierre">
+            <p>No necesitas encontrar todas las respuestas hoy.<br>A veces, lo más valioso de una meditación no es lo que comprendemos durante ella, sino aquello que comenzamos a observar de nosotros mismos después.</p>
+        </div>
+
+        <button type="submit" class="boton-general">Enviar mi intención</button>
+    </form>
+</div>
+</body>
+</html>

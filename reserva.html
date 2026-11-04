@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserva tu sesión en PsilOrigen. Completa tu formulario de intención y agenda tu experiencia.">
+    <title>Reserva | PsilOrigen</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="https://wa.me/18094579494?text=Hola%20PsilOrigen%2C%20tengo%20una%20duda%20sobre%20la%20meditaci%C3%B3n" target="_blank" class="whatsapp-float">💬 WhatsApp</a>
+
+<div class="contenedor">
+    <form id="reservaForm">
+        <input type="hidden" name="tipo" value="reserva">
+        
+        <div class="cabecera">
+            <img src="img/logo.png" alt="Logo PsilOrigen" class="logo-imagen" width="220" height="auto" loading="lazy">
+            <div class="subtitulo">EXPLORA. CONECTA. INTEGRA.</div>
+        </div>
+
+        <div class="nav-container">
+            <button type="button" class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav" id="menuNav">
+                <a href="index.html">🏠 Portada</a>
+                <a href="quienes-somos.html">🌿 Quiénes Somos</a>
+                <a href="experiencia.html">🧠 Experiencia</a>
+                <a href="inversion.html">🤲 Aporte</a>
+                <a href="reserva.html" class="activo">📝 Reserva</a>
+                <a href="contacto.html">📞 Contacto</a>
+            </div>
+        </div>
+
+        <div class="intro" style="margin-bottom: 10px;">
+            <h2>FORMULARIO DE INTENCIÓN</h2>
+            <p>Un espacio para escucharte antes de comenzar.</p>
+        </div>
+
+        <!-- BARRA DE PROGRESO -->
+        <div class="wizard-progress-container">
+            <div class="wizard-progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="wizard-container">
+            
+            <!-- PASO 1: CALENDARIO -->
+            <div class="wizard-step active" data-step="1">
+                <h3>Agenda tu experiencia</h3>
+                <p class="subtext">Selecciona el día y horario (Lunes a Viernes)</p>
+                
+                <div class="calendario">
+                    <div class="calendario-header">
+                        <button type="button" onclick="cambiarMes(-1)">◀</button>
+                        <h3 id="mesActual"></h3>
+                        <button type="button" onclick="cambiarMes(1)">▶</button>
+                    </div>
+                    <div class="dias-semana">
+                        <span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
+                    </div>
+                    <div class="dias-grid" id="calendarioGrid"></div>
+                </div>
+
+                <div class="horarios-disponibles" id="horariosDisponibles">
+                    <h4>Selecciona tu horario:</h4>
+                    <button type="button" class="horario-btn" onclick="seleccionarHorario(this, '7:00 AM - 12:00 PM')">7:00 AM - 12:00 PM</button>
+                    <button type="button" class="horario-btn" onclick="seleccionarHorario(this, '4:00 PM - 11:00 PM')">4:00 PM - 11:00 PM</button>
+                </div>
+
+                <input type="hidden" name="fecha_meditacion" id="fechaSeleccionada" required>
+                <input type="hidden" name="horario_meditacion" id="horarioSeleccionado" required>
+                
+                <div class="wizard-buttons" style="justify-content: flex-end;">
+                    <button type="button" class="btn-wizard btn-wizard-next" disabled>Siguiente ➔</button>
+                </div>
+            </div>
+
+            <!-- PASO 2: MOTIVACIÓN -->
+            <div class="wizard-step" data-step="2">
+                <h3>¿Qué te motivó a participar en esta meditación?</h3>
+                <p class="subtext">Puedes elegir más de una opción</p>
+                <div class="opciones-wizard">
+                    <label class="opcion-card"><input type="checkbox" name="motivacion[]" value="estres"> Estrés y ansiedad</label>
+                    <label class="opcion-card"><input type="checkbox" name="motivacion[]" value="busqueda"> Búsqueda de sentido</label>
+                    <label class="opcion-card"><input type="checkbox" name="motivacion[]" value="exploracion"> Exploración interior</label>
+                    <label class="opcion-card"><input type="checkbox" name="motivacion[]" value="crecimiento"> Crecimiento personal</label>
+                    <label class="opcion-card"><input type="checkbox" name="motivacion[]" value="reconexion"> Reconexión con la naturaleza</label>
+                </div>
+                <div class="wizard-buttons">
+                    <button type="button" class="btn-wizard btn-wizard-prev">➔ Atrás</button>
+                    <button type="button" class="btn-wizard btn-wizard-next">Siguiente ➔</button>
+                </div>
+            </div>
+
+            <!-- PASO 3: BÚSQUEDA -->
+            <div class="wizard-step" data-step="3">
+                <h3>¿Qué estás buscando en este momento de tu vida?</h3>
+                <p class="subtext">Puedes elegir más de una opción</p>
+                <div class="opciones-wizard">
+                    <label class="opcion-card"><input type="checkbox" name="buscando[]" value="calma"> Calma y claridad</label>
+                    <label class="opcion-card"><input type="checkbox" name="buscando[]" value="proposito"> Propósito de vida</label>
+                    <label class="opcion-card"><input type="checkbox" name="buscando[]" value="sanacion"> Sanación emocional</label>
+                    <label class="opcion-card"><input type="checkbox" name="buscando[]" value="conexion"> Conexión espiritual</label>
+                    <label class="opcion-card"><input type="checkbox" name="buscando[]" value="liberacion"> Liberación de patrones</label>
+                </div>
+                <div class="wizard-buttons">
+                    <button type="button" class="btn-wizard btn-wizard-prev">➔ Atrás</button>
+                    <button type="button" class="btn-wizard btn-wizard-next">Siguiente ➔</button>
+                </div>
+            </div>
+
+            <!-- PASO 4: EXPLORAR -->
+            <div class="wizard-step" data-step="4">
+                <h3>¿Qué te gustaría explorar dentro de ti?</h3>
+                <p class="subtext">Puedes elegir más de una opción</p>
+                <div class="opciones-wizard">
+                    <label class="opcion-card"><input type="checkbox" name="explorar[]" value="miedos"> Mis miedos</label>
+                    <label class="opcion-card"><input type="checkbox" name="explorar[]" value="bloqueos"> Bloqueos emocionales</label>
+                    <label class="opcion-card"><input type="checkbox" name="explorar[]" value="relaciones"> Mis relaciones</label>
+                    <label class="opcion-card"><input type="checkbox" name="explorar[]" value="cuerpo"> La conexión con mi cuerpo</label>
+                    <label class="opcion-card"><input type="checkbox" name="explorar[]" value="sombra"> Mi sombra</label>
+                </div>
+                <div class="wizard-buttons">
+                    <button type="button" class="btn-wizard btn-wizard-prev">➔ Atrás</button>
+                    <button type="button" class="btn-wizard btn-wizard-next">Siguiente ➔</button>
+                </div>
+            </div>
+
+            <!-- PASO 5: INTENCIÓN FINAL -->
+            <div class="wizard-step" data-step="5">
+                <h3>Mi intención</h3>
+                <p class="subtext">Completa esta frase: “Mi intención para esta meditación es…”</p>
+                <textarea name="intencion_final" id="intencion_final" class="wizard-input" placeholder="Escribe aquí con honestidad..." required></textarea>
+                <div class="wizard-buttons">
+                    <button type="button" class="btn-wizard btn-wizard-prev">➔ Atrás</button>
+                    <button type="button" class="btn-wizard btn-wizard-next">Siguiente ➔</button>
+                </div>
+            </div>
+
+            <!-- PASO 6: DATOS DE CONTACTO -->
+            <div class="wizard-step" data-step="6">
+                <h3>Tus datos de contacto</h3>
+                <p class="subtext">Para poder comunicarnos y confirmar tu espacio</p>
+                
+                <label for="nombreReserva">Nombre: *</label>
+                <input type="text" id="nombreReserva" name="nombre" required>
+                
+                <label for="whatsappReserva">Número de WhatsApp: *</label>
+                <input type="tel" id="whatsappReserva" name="whatsapp" placeholder="Ej: +1 809 457 9494" required>
+
+                <label>Tipo de Reserva *</label>
+                <select name="tipo_reserva" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="individual">Individual</option>
+                    <option value="duo">Dúo</option>
+                    <option value="ciclo">Ciclo de 4 Sesiones</option>
+                    <option value="grupal">Grupal (3-5 personas)</option>
+                </select>
+
+                <label>¿Cómo realizarás tu aporte? *</label>
+                <select name="metodo_aporte" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="transferencia">Transferencia Bancaria</option>
+                </select>
+                
+                <div class="wizard-buttons">
+                    <button type="button" class="btn-wizard btn-wizard-prev">➔ Atrás</button>
+                    <button type="submit" class="boton-general" style="margin-top: 0;">Enviar mi intención</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<div class="modal-overlay" id="successModal">
+    <div class="modal-box">
+        <img src="img/logo.png" alt="Logo PsilOrigen">
+        <h3>✨ Gracias por confiar en el proceso</h3>
+        <p>Tu intención ha sido recibida. Te contactaremos muy pronto para acompañarte en este hermoso viaje de reconexión.</p>
+        <button class="modal-close-btn" onclick="closeModal()">Cerrar</button>
+    </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
