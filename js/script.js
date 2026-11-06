@@ -69,3 +69,38 @@ window.addEventListener('scroll', function() {
         }
     }
 });
+
+// LÓGICA DEL PRELOADER
+window.addEventListener('load', function() {
+    var preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(function() {
+            preloader.classList.add('hidden');
+            // Remover del DOM después de la animación
+            setTimeout(function() { preloader.style.display = 'none'; }, 800);
+        }, 500); // Medio segundo de gracia para que se aprecie la animación
+    }
+});
+
+// LÓGICA DE SCROLL REVEAL (Aparición elegante)
+document.addEventListener('DOMContentLoaded', function() {
+    // Añadir automáticamente la clase reveal a elementos clave
+    var elementsToReveal = document.querySelectorAll('.tarjeta, .plan, .paso, .caja-reflexion, .bienvenida, h2, .intro, .boton-cta, .tarjeta-cta, .chat-wa-box');
+    elementsToReveal.forEach(function(el) {
+        el.classList.add('reveal');
+    });
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Solo animar una vez
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+    var reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(function(el) {
+        observer.observe(el);
+    });
+});
