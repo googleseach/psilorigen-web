@@ -104,3 +104,31 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
+
+// LÓGICA DEL MODO ENFOQUE (CALENDARIO)
+document.addEventListener('DOMContentLoaded', function() {
+    var calendario = document.querySelector('.calendario');
+    var overlay = document.getElementById('focus-overlay');
+    
+    if (calendario && overlay) {
+        // Al hacer clic en el calendario, activar el modo enfoque
+        calendario.addEventListener('click', function(e) {
+            document.body.classList.add('focus-active');
+            overlay.classList.add('active');
+        });
+
+        // Al hacer clic fuera del calendario (en el overlay), desactivar
+        overlay.addEventListener('click', function() {
+            document.body.classList.remove('focus-active');
+            overlay.classList.remove('active');
+        });
+
+        // Desactivar si el usuario avanza al paso 2 del wizard
+        document.querySelectorAll('.btn-wizard-next').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.body.classList.remove('focus-active');
+                overlay.classList.remove('active');
+            });
+        });
+    }
+});
