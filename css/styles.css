@@ -449,9 +449,8 @@ a:hover { color: var(--verde-bosque) !important; }
 #focus-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(16, 44, 29, 0.6);
-    backdrop-filter: blur(4px);
-    z-index: 100;
+    background-color: rgba(16, 44, 29, 0.85); /* Verde bosque oscuro sin desenfoque */
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
@@ -460,12 +459,33 @@ a:hover { color: var(--verde-bosque) !important; }
     opacity: 1;
     visibility: visible;
 }
+#focus-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+/* Efecto Hover (Solo pasar el ratón) */
+.calendario {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+.calendario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(16, 44, 29, 0.12);
+    border-color: var(--dorado);
+}
+
+/* Modo Enfoque (Al hacer clic) */
+.focus-active .wizard-step.active {
+    position: relative;
+    z-index: 1005; /* Eleva el paso por encima del fondo oscuro */
+}
 .focus-active .calendario {
     position: relative;
-    z-index: 105;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    transform: scale(1.02);
-    transition: all 0.5s ease;
+    z-index: 1006; /* Eleva el calendario por encima de todo */
+    background-color: var(--blanco-roto); /* Mantiene su color claro */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transform: scale(1.03);
+    border-color: var(--dorado);
 }
 
 /* =========================================
@@ -563,3 +583,4 @@ footer {
     background-color: #128C7E !important;
     color: #FFFFFF !important;
 }
+
