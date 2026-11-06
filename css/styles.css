@@ -520,17 +520,19 @@ footer {
 .safe-space-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background-color: rgba(82, 107, 54, 0.1);
-    color: var(--verde-natural);
-    padding: 8px 16px;
+    gap: 10px;
+    background-color: var(--verde-bosque);
+    color: var(--dorado);
+    padding: 12px 24px;
     border-radius: 50px;
     font-family: var(--font-sans);
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(16, 44, 29, 0.2);
+    border: 1px solid var(--dorado);
 }
 .footer-links {
     display: flex;
@@ -548,4 +550,16 @@ footer {
 }
 .footer-links a:hover {
     color: var(--verde-bosque);
+}
+
+/* CORRECCIÓN DE CONTRASTE PARA WHATSAPP */
+.whatsapp-float, .whatsapp-float:visited,
+.btn-whatsapp-grande, .btn-whatsapp-grande:visited {
+    background-color: #25D366 !important;
+    color: #FFFFFF !important;
+    text-shadow: none !important;
+}
+.whatsapp-float:hover, .btn-whatsapp-grande:hover {
+    background-color: #128C7E !important;
+    color: #FFFFFF !important;
 }
