@@ -44,7 +44,7 @@ body {
 
 /* CABECERA */
 .cabecera { text-align: center; padding-bottom: 25px; margin-bottom: 30px; border-bottom: 1px solid rgba(189, 138, 50, 0.3); }
-.logo-imagen { max-width: 180px; margin: 0 auto 15px auto; display: block; }
+.logo-imagen { max-width: 280px; width: 100%; height: auto; margin: 0 auto 10px auto; display: block; }
 .subtitulo { 
     font-family: var(--font-sans);
     font-size: 10px; 
@@ -280,3 +280,4 @@ a:hover { color: var(--verde-bosque) !important; }
     .wizard-buttons { flex-direction: column; }
     .whatsapp-float { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 11px; }
 }
+
