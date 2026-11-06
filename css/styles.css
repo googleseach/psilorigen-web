@@ -169,18 +169,19 @@ input:focus, textarea:focus, select:focus { border-color: var(--dorado-quemado);
 .wizard-input { width: 100%; padding: 15px; border: 1px solid rgba(127, 90, 36, 0.3); border-radius: 12px; font-family: inherit; font-size: 15px; resize: vertical; min-height: 120px; background-color: var(--blanco-roto); }
 
 /* CALENDARIO */
-.calendario { background-color: var(--blanco-roto); border-radius: 16px; padding: 20px; border: 1px solid rgba(127, 90, 36, 0.1); margin-top: 15px; }
-.calendario-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-.calendario-header h3 { margin: 0; color: var(--verde-bosque); font-size: 16px; }
-.calendario-header button { background: none; border: none; font-size: 18px; color: var(--dorado-quemado); cursor: pointer; }
-.dias-semana { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 11px; color: var(--dorado-quemado); margin-bottom: 10px; }
-.dias-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
-.dia { padding: 10px 0; text-align: center; border-radius: 8px; font-size: 14px; cursor: pointer; transition: all 0.2s; }
-.dia.disponible { background-color: var(--pergamino); color: var(--verde-bosque); }
+.calendario { background-color: var(--blanco-roto); border-radius: 16px; padding: 20px; border: 1px solid rgba(127, 90, 36, 0.1); margin-top: 15px; width: 100%; box-sizing: border-box; }
+.calendario-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; width: 100%; }
+.calendario-header h3 { margin: 0; color: var(--verde-bosque); font-size: 16px; text-align: center; flex-grow: 1; }
+.calendario-header button { background: none; border: none; font-size: 18px; color: var(--dorado-quemado); cursor: pointer; padding: 5px; }
+.dias-semana { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 12px; font-weight: bold; color: var(--dorado-quemado); margin-bottom: 10px; width: 100%; }
+.dias-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; width: 100%; }
+.dia { padding: 10px 0; text-align: center; border-radius: 8px; font-size: 14px; cursor: pointer; transition: all 0.2s; background-color: rgba(0,0,0,0.02); }
+.dia.disponible { background-color: var(--pergamino); color: var(--verde-bosque); border: 1px solid rgba(127, 90, 36, 0.1); }
 .dia.disponible:hover { background-color: rgba(127, 90, 36, 0.1); }
-.dia.ocupado { color: #ccc; cursor: not-allowed; }
-.dia.seleccionado { background-color: var(--dorado-quemado); color: var(--pergamino); font-weight: bold; }
-.horarios-disponibles { display: none; margin-top: 20px; }
+.dia.ocupado { color: #ccc; cursor: not-allowed; opacity: 0.5; }
+.dia.seleccionado { background-color: var(--dorado-quemado); color: var(--pergamino); font-weight: bold; border: 1px solid var(--dorado-quemado); }
+.subtext { text-align: center; font-style: italic; color: #666; font-size: 14px; margin-bottom: 20px; display: block; }
+.horarios-disponibles { display: none; margin-top: 20px; text-align: center; }
 .horario-btn { display: inline-block; padding: 10px 15px; border: 1px solid var(--dorado-quemado); border-radius: 20px; background: none; color: var(--dorado-quemado); cursor: pointer; margin: 5px; font-family: inherit; font-size: 13px; }
 .horario-btn.seleccionado { background-color: var(--dorado-quemado); color: var(--pergamino); }
 
@@ -205,3 +206,4 @@ input:focus, textarea:focus, select:focus { border-color: var(--dorado-quemado);
     h1 { font-size: 24px; }
     .wizard-buttons { flex-direction: column; }
 }
+
