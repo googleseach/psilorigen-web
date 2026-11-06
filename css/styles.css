@@ -44,7 +44,24 @@ body {
 
 /* CABECERA */
 .cabecera { text-align: center; padding-bottom: 25px; margin-bottom: 30px; border-bottom: 1px solid rgba(189, 138, 50, 0.3); }
-.logo-imagen { max-width: 280px; width: 100%; height: auto; margin: 0 auto 10px auto; display: block; }
+/* ENCABEZADO PREMIUM (ISOLOGO + TEXTO) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.logo-isotipo {
+    max-height: 60px;
+    width: auto;
+    display: block;
+}
+.logo-imagen {
+    max-height: 45px;
+    width: auto;
+    display: block;
+}
 .subtitulo { 
     font-family: var(--font-sans);
     font-size: 10px; 
@@ -281,3 +298,10 @@ a:hover { color: var(--verde-bosque) !important; }
     .whatsapp-float { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 11px; }
 }
 
+
+
+@media (max-width: 600px) {
+    .logo-isotipo { max-height: 45px; }
+    .logo-imagen { max-height: 35px; }
+    .logo-container { gap: 10px; }
+}
