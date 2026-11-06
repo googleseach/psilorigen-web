@@ -57,3 +57,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if(input) { input.addEventListener('change', () => { if(input.type === 'radio') { document.querySelectorAll(`input[name="${input.name}"]`).forEach(r => { if(r !== input) r.parentElement.classList.remove('selected'); }); } if(input.checked) label.classList.add('selected'); else label.classList.remove('selected'); }); }
     });
 });
+
+// LÓGICA DEL LOGO FLOTANTE AL HACER SCROLL
+window.addEventListener('scroll', function() {
+    var logoFlotante = document.getElementById('logo-flotante');
+    if (logoFlotante) {
+        if (window.scrollY > 150) {
+            logoFlotante.classList.add('visible');
+        } else {
+            logoFlotante.classList.remove('visible');
+        }
+    }
+});
