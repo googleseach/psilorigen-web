@@ -19,6 +19,16 @@ body {
     line-height: 1.6;
 }
 
+/* REGLA GLOBAL PARA ENLACES (Evita el azul feo del navegador) */
+a {
+    color: var(--dorado-quemado);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: var(--verde-bosque);
+}
+
 /* CONTENEDOR PRINCIPAL (Estilo App Móvil) */
 .contenedor {
     max-width: 480px; /* Ancho típico de mockup móvil */
@@ -200,10 +210,42 @@ input:focus, textarea:focus, select:focus { border-color: var(--dorado-quemado);
 @media (max-width: 600px) {
     .contenedor { padding: 20px 15px; }
     .menu-toggle { display: block; }
-    .nav { display: none; flex-direction: column; margin-top: 15px; background: var(--blanco-roto); padding: 15px; border-radius: 16px; box-shadow: var(--sombra-suave); }
+    
+    /* NUEVO DISEÑO DEL MENÚ HAMBURGUESA */
+    .nav { 
+        display: none; 
+        flex-direction: column; 
+        margin-top: 15px; 
+        background: var(--blanco-roto); 
+        border-radius: 16px; 
+        box-shadow: 0 10px 30px rgba(28, 38, 26, 0.1); 
+        border: 1px solid rgba(127, 90, 36, 0.2);
+        overflow: hidden;
+    }
     .nav.open { display: flex; }
-    .nav a { width: 100%; text-align: center; padding: 12px; box-sizing: border-box; }
+    
+    .nav a { 
+        width: 100%; 
+        text-align: center; 
+        padding: 18px 20px; 
+        box-sizing: border-box; 
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: var(--verde-bosque);
+        border-bottom: 1px solid rgba(127, 90, 36, 0.1);
+        border-radius: 0;
+        background-color: transparent;
+    }
+    .nav a:last-child {
+        border-bottom: none;
+    }
+    .nav a:hover, .nav a.activo { 
+        background-color: rgba(127, 90, 36, 0.05); 
+        color: var(--dorado-quemado);
+        border-color: rgba(127, 90, 36, 0.1);
+    }
+    
     h1 { font-size: 24px; }
     .wizard-buttons { flex-direction: column; }
+    .whatsapp-float { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 14px; }
 }
-
