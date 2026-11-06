@@ -19,12 +19,7 @@ body {
     line-height: 1.6;
 }
 
-/* REGLA GLOBAL PARA ENLACES (Evita el azul feo del navegador) */
-a {
-    color: var(--dorado-quemado);
-    text-decoration: none;
-    transition: color 0.3s;
-}
+
 a:hover {
     color: var(--verde-bosque);
 }
@@ -248,4 +243,50 @@ input:focus, textarea:focus, select:focus { border-color: var(--dorado-quemado);
     h1 { font-size: 24px; }
     .wizard-buttons { flex-direction: column; }
     .whatsapp-float { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 14px; }
+}
+
+/* =========================================
+   CORRECCIÓN DEFINITIVA DE ENLACES (AZUL)
+   ========================================= */
+a, a:link, a:visited, a:active {
+    color: var(--dorado-quemado) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--verde-bosque) !important;
+}
+
+/* Proteger los botones verdes para que el texto SIEMPRE sea blanco */
+.whatsapp-float, .whatsapp-float:visited,
+.btn-whatsapp-grande, .btn-whatsapp-grande:visited {
+    color: #FFFFFF !important;
+}
+
+.boton-cta a, .boton-cta a:visited, 
+.boton-general, .boton-general:visited,
+.plan-btn, .plan-btn:visited {
+    color: var(--pergamino) !important;
+}
+
+.boton-cta a:hover, .boton-general:hover, .plan-btn:hover {
+    color: var(--pergamino) !important;
+}
+
+/* Proteger el menú de navegación */
+.nav a, .nav a:visited {
+    color: var(--verde-bosque) !important;
+}
+
+.nav a:hover, .nav a.activo {
+    color: var(--dorado-quemado) !important;
+}
+
+/* Proteger el texto dentro de las tarjetas de opciones (Checkboxes) */
+.opcion-card {
+    color: var(--negro-tinta) !important;
+}
+.opcion-card.selected {
+    color: var(--dorado-quemado) !important;
 }
